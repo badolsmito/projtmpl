@@ -41,12 +41,22 @@ namespace fs = std::filesystem;
 int main(int argc, char **argv) {
 
     auto data = toml::parse("../../config/main.toml"); // todo: change later
+
+    /*
+        This piece of block essentially extracts the directories list in the toml file and loops over it, creating
+        directories with the corresponding name.
+    */
     std::vector<std::string> directories = toml::get<std::vector<std::string>>(toml::find(data, "directories"));
-    
     for (const auto &i : directories) {
         fs::create_directory(i);
         fmt::print(fg(fmt::color::light_green), "Directory {} created!\n", i);
     }
 
+    std::vector<std::array<std::string, 2>> tlfiles = toml::get<std::vector<std::array<std::string, 2>>>(toml::find(data, "tlfiles"));
+    for (const auto &i : tlfiles) {
+        std::ofstream j(i[0]); // Creates a file with the first item of i, which is the name for the file
+        j << i[1]; // The actual contents get written into that file.
+        j.close();
+    }
     return 0;
 }
