@@ -19,6 +19,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 // TODO: Add notice when interacting with the program as described in
 // https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html#SEC4
+// TODO: Add success/fail messages based on the absence/presence of errors returned
+// at run-time
 
 #define FMT_HEADER_ONLY 
 #include "fmt/core.h"
@@ -26,9 +28,22 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include "argh.h"
 #include "toml.hpp"
 
+#include <cstdlib>
+#include <string>
+#include <filesystem>
+#include <fstream>
+
+namespace fs = std::filesystem;
+
 int main(int argc, char **argv) {
 
     auto data = toml::parse("../config/main.toml");
+    std::vector<std::string> directories = toml::find<std::vector<std::string>(data, directories);
+    
+    for (const auto &i : directories) {
+        fs::createdirectory(i);
+        fmt::print(fg(fmt::color::light_green), "Directory {} created!\n", i);
+    }
 
     return 0;
 }

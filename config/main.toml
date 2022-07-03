@@ -2,19 +2,12 @@
 # Changing the keys will require a modification of the ../src/main.cpp file
 # to accomodate the changes. You will also need to re-compile the program.
 
-[directories]
-dir1 = "src"
-dir2 = "inc"
-dir3 = "lib"
+directories = ["src", "inc", "lib"]
 
-[tlfiles] # Top level files such as .gitignore, CMakeLists.txt etc.
-tlfile1 = ".gitignore"
-tlfile2 = "CMakeLists.txt"
-tlfile3 = "README.md"
-tlfile4 = "COPYING"
+tlfiles = [".gitignore", "CMakeLists.txt",
+             "README.md", "COPYING"
+          ] # Top level files such as .gitignore, CMakeLists.txt etc.
 
-[srcfiles] # Files to be included into directories, such as main.cpp
-srcfile1 = "main.cpp"
+srcfiles = ["src/main.cpp"] # Files to be included into directories, such as main.cpp
 
-[commands] # Commands to be executed by the system, such as git init
-initgit = "git init"
+commands = ["git init"] # Commands to be executed by the system, such as git init
