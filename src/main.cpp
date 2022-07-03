@@ -19,3 +19,16 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 // TODO: Add notice when interacting with the program as described in
 // https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html#SEC4
+
+#define FMT_HEADER_ONLY 
+#include "fmt/core.h"
+#include "fmt/color.h"
+#include "argh.h"
+#include "toml.hpp"
+
+int main(int argc, char **argv) {
+
+    auto data = toml::parse("../config/main.toml");
+
+    return 0;
+}
