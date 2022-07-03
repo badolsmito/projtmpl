@@ -21,6 +21,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html#SEC4
 // TODO: Add success/fail messages based on the absence/presence of errors returned
 // at run-time
+// TODO: Maybe add another file to config containing the path to the main.toml file.
+// or maybe have the program be called from anywhere and the path would be hardcoded
 
 #define FMT_HEADER_ONLY 
 #include "fmt/core.h"
