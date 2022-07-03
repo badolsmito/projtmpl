@@ -39,7 +39,7 @@ namespace fs = std::filesystem;
 int main(int argc, char **argv) {
 
     auto data = toml::parse("../config/main.toml");
-    std::vector<std::string> directories = toml::find<std::vector<std::string>(data, "directories");
+    std::vector<std::string> directories = toml::get<std::vector<std::string>>(toml::find(data, "directories"));
     
     for (const auto &i : directories) {
         fs::create_directory(i);
