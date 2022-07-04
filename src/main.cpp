@@ -23,6 +23,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // at run-time
 // TODO: Maybe add another file to config containing the path to the main.toml file.
 // or maybe have the program be called from anywhere and the path would be hardcoded
+// TODO: Add title string variable in main.toml. argv[1] should be its content.
+// TODO: Then, # title is added into README.md
 
 #define FMT_HEADER_ONLY 
 #include "fmt/core.h"
