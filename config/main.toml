@@ -11,6 +11,7 @@
 # srcfiles contains the source files that you wish to include in directories.
 # The first item has the path, the second item has the name and the third item its contents.
 
+[default]
 directories = ["src", "inc", "lib"]
 
 files = [

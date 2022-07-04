@@ -44,18 +44,20 @@ namespace fs = std::filesystem;
 int main(int argc, char **argv) {
 
     auto data = toml::parse("../../config/main.toml"); // todo: change later
+    std::string template_name = argv[1];
+    const auto tmplt = toml::find(data, template_name);
 
     /*
         This piece of block essentially extracts the directories list in the toml file and loops over it, creating
         directories with the corresponding name.
     */
-    std::vector<std::string> directories = toml::get<std::vector<std::string>>(toml::find(data, "directories"));
+    std::vector<std::string> directories = toml::get<std::vector<std::string>>(toml::find(tmplt, "directories"));
     for (const auto &i : directories) {
         fs::create_directory(i);
         fmt::print(fg(fmt::color::light_green), "Directory {} created!\n", i);
     }
 
-    std::vector<std::array<std::string, 2>> files = toml::get<std::vector<std::array<std::string, 2>>>(toml::find(data, "files"));
+    std::vector<std::array<std::string, 2>> files = toml::get<std::vector<std::array<std::string, 2>>>(toml::find(tmplt, "files"));
     for (const auto &i : files) {
         std::ofstream j(i[0]); // Creates a file with the first item of i, which is the name for the file
         j << i[1]; // The actual contents get written into that file.
@@ -63,7 +65,7 @@ int main(int argc, char **argv) {
         fmt::print(fg(fmt::color::light_green), "File {} created!\n", i[0]);
     }
 
-    std::vector<std::string> commands = toml::get<std::vector<std::string>>(toml::find(data, "commands"));
+    std::vector<std::string> commands = toml::get<std::vector<std::string>>(toml::find(tmplt, "commands"));
     for (const auto &i : commands) {
         system(i.data());
         fmt::print(fg(fmt::color::light_green), "Command {} executed!\n", i);
