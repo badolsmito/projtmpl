@@ -36,7 +36,7 @@ namespace fs = std::filesystem;
 
 int main(int argc, char **argv) {
 
-    auto data = toml::parse("../../config/main.toml"); // todo: change later
+    auto data = toml::parse("main.toml");
     std::string template_name = argv[1];
     const auto tmplt = toml::find(data, template_name);
 

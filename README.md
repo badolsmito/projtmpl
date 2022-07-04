@@ -1,6 +1,8 @@
 # ProjTmpl
 
-ProjTmpl is a tool that allows the quick and easy set up of projects using an easy-to-configure TOML file for templates.
+ProjTmpl is a tool that allows the quick and easy set up of projects using an easy-to-configure TOML file for templates.  
+You can create your own templates by adding a table with the name that you wish to use and add the variables found in default  
+and change their values. To use your template, simply pass its name as an argument when using ProjTmpl.  
 
 ## Dependencies
 
