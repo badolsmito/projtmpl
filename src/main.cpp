@@ -19,18 +19,11 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 // TODO: Add notice when interacting with the program as described in
 // https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html#SEC4
-// TODO: Add success/fail messages based on the absence/presence of errors returned
-// at run-time
-// TODO: Maybe add another file to config containing the path to the main.toml file.
-// or maybe have the program be called from anywhere and the path would be hardcoded
-// TODO: Add title string variable in main.toml. argv[1] should be its content.
-// TODO: Then, # title is added into README.md
 // TODO: Guards preventing the overwriting of files and folders without intention. Use command-line arguments to allow it.
 
 #define FMT_HEADER_ONLY 
 #include "fmt/core.h"
 #include "fmt/color.h"
-#include "argh.h"
 #include "toml.hpp"
 
 #include <cstdlib>
