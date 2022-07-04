@@ -25,6 +25,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // or maybe have the program be called from anywhere and the path would be hardcoded
 // TODO: Add title string variable in main.toml. argv[1] should be its content.
 // TODO: Then, # title is added into README.md
+// TODO: Guards preventing the overwriting of files and folders without intention. Use command-line arguments to allow it.
 
 #define FMT_HEADER_ONLY 
 #include "fmt/core.h"
