@@ -60,6 +60,13 @@ int main(int argc, char **argv) {
         std::ofstream j(i[0]); // Creates a file with the first item of i, which is the name for the file
         j << i[1]; // The actual contents get written into that file.
         j.close();
+        fmt::print(fg(fmt::color::light_green), "File {} created!\n", i[0]);
+    }
+
+    std::vector<std::string> commands = toml::get<std::vector<std::string>>(toml::find(data, "commands"));
+    for (const auto &i : commands) {
+        system(i.data());
+        fmt::print(fg(fmt::color::light_green), "Command {} executed!\n", i);
     }
     return 0;
 }

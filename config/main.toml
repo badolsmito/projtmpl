@@ -45,5 +45,5 @@ int main(int argc, char **argv) {
 '''
 ]
 ]
- 
-commands = ["git init"] # Commands to be executed by the system, such as git init
+
+commands = ['''echo "Test"'''] # Commands to be executed by the system, such as git init
