@@ -2,10 +2,34 @@
 # Changing the keys will require a modification of the ../src/main.cpp file
 # to accomodate the changes. You will also need to re-compile the program.
 
+# directories contains the directories that you want to have created.
+# You may decide to include a path to a nested directory (e.g. "build/debug")
+
+# tlfiles contains the top level files.
+# The first item is its name and the second item is its contents.
+
+# srcfiles contains the source files that you wish to include in directories.
+# The first item has the path, the second item has the name and the third item its contents.
+
 directories = ["src", "inc", "lib"]
 
-tlfiles = [[".gitignore", '''build/'''], ["CMakeLists.txt", ''' '''], # Top level files such as .gitignore, CMakeLists.txt etc.
-             ["README.md", ''' '''], ["COPYING", ''' ''']
+tlfiles = [[".gitignore",
+            '''
+            build/
+            '''
+           ],
+           ["CMakeLists.txt",
+            '''
+            '''
+           ],
+           ["README.md",
+            '''
+            '''
+           ],
+           ["COPYING",
+            '''
+            '''
+           ]
           ] 
 
 srcfiles = [["src/", "main.cpp", # Each item in this list is another list. In that nested list, the first item is the the path, the second item is the name of the file and the third item is the actual contents.
