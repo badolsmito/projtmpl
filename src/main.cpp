@@ -55,8 +55,8 @@ int main(int argc, char **argv) {
         fmt::print(fg(fmt::color::light_green), "Directory {} created!\n", i);
     }
 
-    std::vector<std::array<std::string, 2>> tlfiles = toml::get<std::vector<std::array<std::string, 2>>>(toml::find(data, "tlfiles"));
-    for (const auto &i : tlfiles) {
+    std::vector<std::array<std::string, 2>> files = toml::get<std::vector<std::array<std::string, 2>>>(toml::find(data, "files"));
+    for (const auto &i : files) {
         std::ofstream j(i[0]); // Creates a file with the first item of i, which is the name for the file
         j << i[1]; // The actual contents get written into that file.
         j.close();

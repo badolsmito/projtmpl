@@ -13,34 +13,37 @@
 
 directories = ["src", "inc", "lib"]
 
-tlfiles = [[".gitignore",
-            '''
-            build/
-            '''
-           ],
-           ["CMakeLists.txt",
-            '''
-            '''
-           ],
-           ["README.md",
-            '''
-            '''
-           ],
-           ["COPYING",
-            '''
-            '''
-           ]
-          ] 
+files = [
+[".gitignore",
+'''
+build/
+'''
+],
+["CMakeLists.txt",
+'''
+'''
+],
+["README.md",
+'''
+'''
+],
+["COPYING",
+'''
+'''
+],
+[
+"src/main.cpp", 
+'''
+#include <iostream>       
 
-srcfiles = [["src/", "main.cpp", # Each item in this list is another list. In that nested list, the first item is the the path, the second item is the name of the file and the third item is the actual contents.
-'''#include <iostream>       
-
-int main(int argc, char **argv {
+int main(int argc, char **argv) {
 
    std::cout << "Hello, world!\n";
    
    return 0;
 }
-''']] # Files to be included into directories, such as main.cpp
-
+'''
+]
+]
+ 
 commands = ["git init"] # Commands to be executed by the system, such as git init
