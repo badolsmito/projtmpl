@@ -11,6 +11,8 @@
 # srcfiles contains the source files that you wish to include in directories.
 # The first item has the path, the second item has the name and the third item its contents.
 
+# commands contains the commands that are going to be executed by your system.
+
 [default]
 directories = ["src", "inc", "lib"]
 
@@ -47,4 +49,4 @@ int main(int argc, char **argv) {
 ]
 ]
 
-commands = ['''git init'''] # Commands to be executed by the system, such as git init
+commands = ['''git init''']

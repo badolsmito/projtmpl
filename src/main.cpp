@@ -37,8 +37,8 @@ namespace fs = std::filesystem;
 int main(int argc, char **argv) {
 
     auto data = toml::parse("/usr/local/bin/main.toml");
-    std::string template_name = argv[1];
-    const auto tmplt = toml::find(data, template_name);
+    
+    const auto tmplt = toml::find(data, argv[1]);
 
     /*
         This piece of block essentially extracts the directories list in the toml file and loops over it, creating
