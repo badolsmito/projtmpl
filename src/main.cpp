@@ -20,6 +20,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 // TODO: Add notice when interacting with the program as described in
 // https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html#SEC4
 // TODO: Guards preventing the overwriting of files and folders without intention. Use command-line arguments to allow it.
+// TODO: Add shorthands that can be defined in config/main.toml (e. g. a user would be able to use -d instead of default)
 
 #define FMT_HEADER_ONLY 
 #include "fmt/core.h"
@@ -37,8 +38,14 @@ namespace fs = std::filesystem;
 int main(int argc, char **argv) {
 
     auto data = toml::parse("/usr/local/bin/main.toml");
-    
-    const auto tmplt = toml::find(data, argv[1]);
+    std::string template_name;
+    if (argc < 2) {
+        template_name = "default";
+    }
+    else {
+        template_name = argv[1];
+    }
+    const auto tmplt = toml::find(data, template_name);
 
     /*
         This piece of block essentially extracts the directories list in the toml file and loops over it, creating
