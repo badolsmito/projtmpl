@@ -7,8 +7,8 @@ and change their values. To use your template, simply pass its name as an argume
 ## Dependencies
 
 ProjTmpl uses the following dependencies:
-  - [{fmt}](https://github.com/fmtlib/fmt) for I/O
   - [toml11](https://github.com/ToruNiina/toml11) for parsing and working with TOML files
+  - [Argh!](https://github.com/adishavit/argh) for easy argument handling.
 
 If you do not have {fmt} installed in your system, you will have to install it manually. Note that I'm developing on Ubuntu 22.
 
